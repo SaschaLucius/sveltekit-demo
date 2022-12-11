@@ -1,11 +1,11 @@
 <script lang="ts">
-    export let value: string = "";
+	export let value: string = '';
 </script>
 
 <button
-    on:click={(a) => {
-        console.log(a.target);
-    }}
+	on:click={(a) => {
+		console.log(a.target);
+	}}
 >
-    {value}
+	{value}
 </button>
