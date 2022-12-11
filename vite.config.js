@@ -13,7 +13,7 @@ const config = {
 		setupFiles: ['./setupTest.ts'],
 		// Exclude files in c8
 		coverage: {
-		  	exclude: ['setupTest.ts']
+			exclude: ['setupTest.ts']
 		}
 	}
 };
