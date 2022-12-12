@@ -33,3 +33,11 @@ jobs:
         run: npm run test
       - name: Run Build
         run: npm run build
+      - name: Run Build GH-Page
+        run: npm run build:static
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          publish_branch: gh-pages

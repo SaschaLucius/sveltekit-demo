@@ -25,10 +25,10 @@
 			<li aria-current={$page.url.pathname.startsWith('/sverdle') ? 'page' : undefined}>
 				<a href="/sverdle">Sverdle</a>
 			</li>
-			<li aria-current={$page.url.pathname.startsWith('/tic-tac-toe') ? 'page' : undefined}>
+			<li aria-current={$page.url.pathname === '/tic-tac-toe' ? 'page' : undefined}>
 				<a href="/tic-tac-toe">Tic-Tac-Toe</a>
 			</li>
-			<li aria-current={$page.url.pathname.startsWith('/item-list') ? 'page' : undefined}>
+			<li aria-current={$page.url.pathname === '/item-list' ? 'page' : undefined}>
 				<a href="/item-list">Item list</a>
 			</li>
 		</ul>

@@ -2,6 +2,9 @@ import { fail } from '@sveltejs/kit';
 import { Game } from './game';
 import type { PageServerLoad, Actions } from './$types';
 
+// do not prerender this page, because it needs form data
+export const prerender = false;
+
 export const load = (({ cookies }) => {
 	const game = new Game(cookies.get('sverdle'));
 
