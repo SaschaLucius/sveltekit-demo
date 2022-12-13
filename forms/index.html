@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width" />
 		<meta http-equiv="content-security-policy" content="">
 		<link href="../_app/immutable/assets/_layout-8454f68e.css" rel="stylesheet">
-		<link href="../_app/immutable/assets/_page-a76262f7.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/_page-385ecf50.css" rel="stylesheet">
 		<link rel="modulepreload" href="../_app/immutable/start-60d1e9b3.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/index-928d18a0.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/singletons-5a84a002.js">
@@ -16,7 +16,7 @@
 		<link rel="modulepreload" href="../_app/immutable/chunks/stores-b431595e.js">
 		<link rel="modulepreload" href="../_app/immutable/modules/pages/_layout.ts-5612100c.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/_layout-79cb23d1.js">
-		<link rel="modulepreload" href="../_app/immutable/components/pages/item-list/_page.svelte-c79a0a4f.js"><title>List</title><!-- HEAD_svelte-edh9nl_START --><meta name="description" content="Svelte List component"><!-- HEAD_svelte-edh9nl_END -->
+		<link rel="modulepreload" href="../_app/immutable/components/pages/forms/_page.svelte-93a9ef2c.js">
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">
@@ -36,27 +36,46 @@
 	<div class="corner svelte-1u9z1tp"><a href="https://github.com/sveltejs/kit" class="svelte-1u9z1tp"><img src="/_app/immutable/assets/github-1ea8d62e.svg" alt="GitHub" class="svelte-1u9z1tp"></a></div>
 </header>
 
-	<main class="svelte-8o1gnw">
+	<main class="svelte-8o1gnw"><h1>Form with in Memory Storage</h1>
+<form><label for="username">Username</label>
+<input id="username" name="username" type="text">
+	<label for="password">Password</label>
+<input id="password" name="password" type="password">
+	<label for="email">Email</label>
+<input id="email" name="email" type="email">
+	<button>Submit</button></form>
 
-<h1>Svelte List component</h1>
+<pre>	{}
+</pre>
 
-<section class="svelte-7w87tm"><button>John is a man and has id 1</button><button>Daniela is a woman and has id 2</button><button>Bob is a man and has id 3</button>
-</section></main>
+<h1>Form with Store</h1>
+<form class="content svelte-bzadv5"><label>Nome</label>
+	<input type="text" value="defaultName">
+	<label>E-mail</label>
+	<input type="text" value="default@mail.com">
+	<label>Telefone</label>
+	<input type="text" value="defaultPhone"></form>
+<p>{
+  "name": "defaultName",
+  "phone": "defaultPhone",
+  "email": "default@mail.com"
+}
+</p></main>
 
 	<footer class="svelte-8o1gnw"><p>visit <a href="https://kit.svelte.dev" class="svelte-8o1gnw">kit.svelte.dev</a> to learn SvelteKit</p></footer>
 </div>
 
 
-		<script type="module" data-sveltekit-hydrate="wgjs9d">
+		<script type="module" data-sveltekit-hydrate="154yfbe">
 			import { start } from "../_app/immutable/start-60d1e9b3.js";
 
 			start({
 				env: {},
 				paths: {"base":"","assets":""},
-				target: document.querySelector('[data-sveltekit-hydrate="wgjs9d"]').parentNode,
+				target: document.querySelector('[data-sveltekit-hydrate="154yfbe"]').parentNode,
 				version: "1670950287422",
 				hydrate: {
-					node_ids: [0, 6],
+					node_ids: [0, 5],
 					data: [null,null],
 					form: null
 				}
