@@ -1,9 +1,14 @@
 <script lang="ts">
 	import Square from './Square.svelte';
+	import { onDestroy } from 'svelte';
 	let squares: Square[] = [];
 	let players = ['X', 'O'];
 	let count = 0;
 	let isFinished = false;
+
+	onDestroy(() => {
+		squares = [];
+	});
 
 	function handleMessage(event: any) {
 		if (squares[event.detail.index].getValue() == '' && !isFinished) {
@@ -22,7 +27,7 @@
 		isFinished = false;
 	};
 
-	export function calculateWinner() {
+	function calculateWinner() {
 		const lines = [
 			[0, 1, 2],
 			[3, 4, 5],

@@ -21,8 +21,7 @@
 			index
 		});
 	}}
->
-	<div transition:fade={{ duration: 5000 }}>{value}</div>
+	>{value}
 </td>
 
 <style type="text/css">
@@ -37,6 +36,7 @@
 		width: 25px;
 		height: 25px;
 		overflow: hidden;
+		text-align: center;
 	}
 	td:hover {
 		background-color: lightgray;
