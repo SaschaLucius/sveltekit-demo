@@ -11,7 +11,7 @@
 </script>
 
 <svelte:head>
-	<title>forms</title>
+	<title>Forms</title>
 	<meta name="description" content="Forms" />
 </svelte:head>
 
@@ -29,11 +29,14 @@
 
 <h1>Form with Store</h1>
 <form class="content">
-	<label>Nome</label>
+	<!-- svelte-ignore a11y-label-has-associated-control -->
+	<label>Name</label>
 	<input type="text" bind:value={$user.name} />
-	<label>E-mail</label>
+	<!-- svelte-ignore a11y-label-has-associated-control -->
+	<label>E-Mail</label>
 	<input type="text" bind:value={$user.email} />
-	<label>Telefone</label>
+	<!-- svelte-ignore a11y-label-has-associated-control -->
+	<label>Telephone</label>
 	<input type="text" bind:value={$user.phone} />
 </form>
 <p>
