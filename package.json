@@ -43,5 +43,8 @@
 		"vite": "^4.0.0",
 		"vitest": "^0.25.7"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"renovate": "^34.63.1"
+	}
 }
