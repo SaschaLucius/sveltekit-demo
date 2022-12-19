@@ -1,0 +1,37 @@
+name: CI
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  build:
+    name: CI
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Validate CI YAML file
+        run: yamllint .github/workflows/ci.yml
+      - name: 'Setup Node.js 18 LTS'
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: npm
+      - name: Install dependencies
+        run: npm install
+      - name: Run Check
+        run: npm run check
+      - name: Run lint
+        run: npm run lint
+      - name: Run Unit-Test
+        run: npm run test:unit
+      - name: Run Coverage
+        run: npm run coverage
+      - name: Install playwright browsers
+        run: npx playwright install chromium
+      - name: Run E2E-Test
+        run: npm run test
+      - name: Run Build
+        run: npm run build
+      - name: Run Build GH-Page
+        run: npm run build:static
