@@ -1,0 +1,27 @@
+name: Validations
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  validate:
+    name: Validate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Validate GitHub-Actions files
+        run: yamllint .github/workflows/
+      - name: Validate with validator from rinchsan
+        uses: rinchsan/renovate-config-validator@v0.0.12
+        with:
+          pattern: 'renovate.json'
+      - name: Validate with validator from suzuki-shunsuke
+        uses: suzuki-shunsuke/github-action-renovate-config-validator@v0.1.2
+        with:
+          config_file_path: '.github/renovate.json'
