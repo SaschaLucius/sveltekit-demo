@@ -5,8 +5,12 @@
 	"prConcurrentLimit": 10,
 	"schedule": ["before 2am every weekday"],
 	"rebaseWhen": "never",
-        "assignees": ["SaschaLucius"]
+        "assignees": ["SaschaLucius"],
 	"packageRules": [
+		{
+                        "matchDatasources": ["npm"],
+                        "stabilityDays": 3
+                },
 		{
 			"groupName": "Svelte core",
 			"matchPackagePatterns": ["^@sveltejs"]
