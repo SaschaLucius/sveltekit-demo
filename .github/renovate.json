@@ -5,6 +5,7 @@
 	"prConcurrentLimit": 10,
 	"schedule": ["before 2am every weekday"],
 	"rebaseWhen": "never",
+        "assignees": ["SaschaLucius"]
 	"packageRules": [
 		{
 			"groupName": "Svelte core",
