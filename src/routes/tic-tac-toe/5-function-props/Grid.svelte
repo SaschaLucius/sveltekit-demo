@@ -1,13 +1,10 @@
 <script lang="ts">
 	import Square from './Square.svelte';
-	import { Move } from './types';
+	import '../grid.css';
+	import { createEventDispatcher } from 'svelte';
+	import { Move } from '../types';
 
-	let squares = [
-		[Move.EMPTY, Move.EMPTY, Move.EMPTY],
-		[Move.EMPTY, Move.EMPTY, Move.EMPTY],
-		[Move.EMPTY, Move.EMPTY, Move.EMPTY]
-	];
-
+	const dispatch = createEventDispatcher();
 	const winningCombinations = [
 		[0, 1, 2],
 		[3, 4, 5],
@@ -19,23 +16,28 @@
 		[2, 4, 6]
 	];
 
+	let squares = [
+		[Move.EMPTY, Move.EMPTY, Move.EMPTY],
+		[Move.EMPTY, Move.EMPTY, Move.EMPTY],
+		[Move.EMPTY, Move.EMPTY, Move.EMPTY]
+	];
 	let isX = true;
 	let isFinished = false;
 
-	function handleClick(rowIndex: number, columnIndex: number) {
-		if (squares[rowIndex][columnIndex] == Move.EMPTY && !isFinished) {
-			const first: Move = Object.values(Move)[0];
-			squares[rowIndex][columnIndex] = Object.values(Move)[Number(isX)];
-			isX = !isX;
-
-			const result = calculateWinner();
-			if (result != Move.EMPTY) {
-				alert(result);
-			}
-		}
+	$: winner = calculateWinner(squares);
+	$: isFinished = winner != Move.EMPTY;
+	$: if (isFinished === true) {
+		dispatch('gameWon', { player: winner });
 	}
 
-	const reset = () => {
+	function handleClick(rowIndex: number, columnIndex: number) {
+		if (squares[rowIndex][columnIndex] == Move.EMPTY && !isFinished) {
+			squares[rowIndex][columnIndex] = Object.values(Move)[Number(isX)];
+		}
+		isX = !isX;
+	}
+
+	export function reset() {
 		squares = [
 			[Move.EMPTY, Move.EMPTY, Move.EMPTY],
 			[Move.EMPTY, Move.EMPTY, Move.EMPTY],
@@ -43,21 +45,24 @@
 		];
 		isX = true;
 		isFinished = false;
-	};
-
-	function indexToValue(index: number): Move {
-		const row = Math.floor(index / 3);
-		const column = index % 3;
-		return squares[row][column];
 	}
 
-	function calculateWinner(): Move {
+	function valueOfIndex(board: Move[][], index: number): Move {
+		const row = Math.floor(index / 3);
+		const column = index % 3;
+		return board[row][column];
+	}
+
+	function calculateWinner(board: Move[][]): Move {
 		for (let i = 0; i < winningCombinations.length; i++) {
 			const [a, b, c] = winningCombinations[i];
-			const valueA = indexToValue(a);
-			if (valueA === indexToValue(b) && valueA === indexToValue(c)) {
-				isFinished = true;
-				return indexToValue(a);
+			const valueA = valueOfIndex(board, a);
+			if (
+				valueA != Move.EMPTY &&
+				valueA === valueOfIndex(board, b) &&
+				valueA === valueOfIndex(board, c)
+			) {
+				return valueA;
 			}
 		}
 		return Move.EMPTY;
@@ -69,19 +74,9 @@
 		{#each squares as row, rowIndex}
 			<tr>
 				{#each row as columnValue, columnIndex}
-					<Square bind:value={columnValue} on:click={() => handleClick(rowIndex, columnIndex)} />
+					<Square value={columnValue} {rowIndex} {columnIndex} {handleClick} />
 				{/each}
 			</tr>
 		{/each}
 	</tbody>
 </table>
-
-<button on:click={reset}> {isFinished ? 'Restart' : 'Reset'} </button>
-
-<style type="text/css">
-	table {
-		table-layout: fixed;
-		border-collapse: collapse;
-		border-spacing: 0;
-	}
-</style>

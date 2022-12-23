@@ -1,5 +1,6 @@
 <script>
 	import Grid from './Grid.svelte';
+	import '../page.css';
 </script>
 
 <svelte:head>
@@ -12,13 +13,3 @@
 <section>
 	<Grid />
 </section>
-
-<style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-	}
-</style>

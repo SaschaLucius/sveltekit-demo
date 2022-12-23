@@ -1,14 +1,13 @@
 <script lang="ts">
 	import Square from './Square.svelte';
-	import { onDestroy } from 'svelte';
+	import '../grid.css';
+	// binds the component to an array element based on it’s index
 	let squares: Square[] = [];
+	// making a hashtable of components.
+	// let squares = {};
 	let players = ['X', 'O'];
 	let count = 0;
 	let isFinished = false;
-
-	onDestroy(() => {
-		squares = [];
-	});
 
 	function handleMessage(event: any) {
 		if (squares[event.detail.index].getValue() == '' && !isFinished) {
@@ -19,6 +18,10 @@
 				alert(result);
 			}
 		}
+	}
+
+	function handleClick(index: number) {
+		console.log(index);
 	}
 
 	const reset = () => {
@@ -61,6 +64,7 @@
 					<Square
 						index={row * 3 + column}
 						on:squareClicked={handleMessage}
+						on:click={() => handleClick(row * 3 + column)}
 						bind:this={squares[row * 3 + column]}
 					/>
 				{/each}
@@ -74,11 +78,3 @@
 {:else}
 	<button on:click={reset}> Reset </button>
 {/if}
-
-<style type="text/css">
-	table {
-		table-layout: fixed;
-		border-collapse: collapse;
-		border-spacing: 0;
-	}
-</style>

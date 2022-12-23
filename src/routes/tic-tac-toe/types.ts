@@ -1,5 +1,5 @@
 export enum Move {
-	X = 'X',
 	O = 'O',
+	X = 'X',
 	EMPTY = ''
 }

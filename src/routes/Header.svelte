@@ -2,6 +2,21 @@
 	import { page } from '$app/stores';
 	import logo from '$lib/images/svelte-logo.svg';
 	import github from '$lib/images/github.svg';
+
+	// https://svelte.dev/tutorial/keyed-each-blocks
+	var pages = [
+		{ path: '/counter', name: 'Counter' },
+		{ path: '/about', name: 'About' },
+		{ path: '/sverdle', name: 'Sverdle' },
+		{ path: '/item-list', name: 'Item list' },
+		{ path: '/forms', name: 'Forms' },
+		{ path: '/tic-tac-toe/0-plain', name: 'T-T-T plain' },
+		{ path: '/tic-tac-toe/1-event-forwarding-and-slot', name: 'T-T-T Slot' },
+		{ path: '/tic-tac-toe/2-event-forwarding-and-props', name: 'T-T-T 1 way binding' },
+		{ path: '/tic-tac-toe/3-component-binding', name: 'T-T-T component binding' },
+		{ path: '/tic-tac-toe/4-value-binding', name: 'T-T-T value binding' },
+		{ path: '/tic-tac-toe/5-function-props', name: 'T-T-T function as prop' }
+	];
 </script>
 
 <header>
@@ -16,24 +31,11 @@
 			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
 		</svg>
 		<ul>
-			<li aria-current={$page.url.pathname === '/counter' ? 'page' : undefined}>
-				<a href="/counter">Counter</a>
-			</li>
-			<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
-				<a href="/about">About</a>
-			</li>
-			<li aria-current={$page.url.pathname.startsWith('/sverdle') ? 'page' : undefined}>
-				<a href="/sverdle">Sverdle</a>
-			</li>
-			<li aria-current={$page.url.pathname === '/tic-tac-toe' ? 'page' : undefined}>
-				<a href="/tic-tac-toe">Tic-Tac-Toe</a>
-			</li>
-			<li aria-current={$page.url.pathname === '/item-list' ? 'page' : undefined}>
-				<a href="/item-list">Item list</a>
-			</li>
-			<li aria-current={$page.url.pathname === '/forms' ? 'page' : undefined}>
-				<a href="/forms">Forms</a>
-			</li>
+			{#each pages as p}
+				<li aria-current={$page.url.pathname === '{p.path}' ? 'page' : undefined}>
+					<a href={p.path}>{p.name}</a>
+				</li>
+			{/each}
 		</ul>
 		<svg viewBox="0 0 2 3" aria-hidden="true">
 			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
