@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Grid from './Grid.svelte';
 	import '../page.css';
 </script>

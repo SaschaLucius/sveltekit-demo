@@ -1,6 +1,6 @@
 # Super simple version
-## declaring props of a component -> one way binding
-https://svelte.dev/tutorial/declaring-props
+## Slot
+https://svelte.dev/tutorial/slots
 
 ## Event forwarding
 https://svelte.dev/tutorial/dom-event-forwarding

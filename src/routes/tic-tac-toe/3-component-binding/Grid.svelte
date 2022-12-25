@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Square from './Square.svelte';
 	import '../grid.css';
+
 	// binds the component to an array element based on it’s index
 	let squares: Square[] = [];
 	// making a hashtable of components.
@@ -9,7 +10,7 @@
 	let count = 0;
 	let isFinished = false;
 
-	function handleMessage(event: any) {
+	function handleMessage(event: CustomEvent<{ index: number }>) {
 		if (squares[event.detail.index].getValue() == '' && !isFinished) {
 			squares[event.detail.index].setValue(players[count % 2]);
 			count += 1;
@@ -18,10 +19,6 @@
 				alert(result);
 			}
 		}
-	}
-
-	function handleClick(index: number) {
-		console.log(index);
 	}
 
 	const reset = () => {
@@ -64,7 +61,6 @@
 					<Square
 						index={row * 3 + column}
 						on:squareClicked={handleMessage}
-						on:click={() => handleClick(row * 3 + column)}
 						bind:this={squares[row * 3 + column]}
 					/>
 				{/each}

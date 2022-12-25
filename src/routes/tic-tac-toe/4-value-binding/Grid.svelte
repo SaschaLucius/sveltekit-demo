@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Square from './Square.svelte';
-	import '../grid.css';
 	import { Move } from '../types';
+	import '../grid.css';
 
 	const winningCombinations = [
 		[0, 1, 2],

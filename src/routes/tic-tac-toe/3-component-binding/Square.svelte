@@ -3,16 +3,19 @@
 	import '../square.css';
 
 	export let index: number;
-	export let value = '';
 	export function setValue(val: string) {
 		value = val;
 	}
-
 	export function getValue() {
 		return value;
 	}
 
-	const dispatch = createEventDispatcher();
+	let value: string = '';
+
+	const dispatch = createEventDispatcher()<{ squareClicked: { index: number } }>;
+	// TODO, how to define the type of the element
+	// https://github.com/sveltejs/language-tools/issues/1371
+	// https://github.com/sveltejs/svelte/issues/5211
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
