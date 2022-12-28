@@ -3,7 +3,7 @@
 	import { user } from './store';
 
 	let json = {};
-
+	let username = 'jane';
 	function handleSubmit(e: SubmitEvent) {
 		const formData = new FormData(e.target as HTMLFormElement);
 		json = Object.fromEntries(formData.entries());
@@ -42,6 +42,20 @@
 <p>
 	{JSON.stringify($user, null, 2)}
 </p>
+
+<h1>Simple two-way bind</h1>
+<form>
+	<div>
+		<input type="text" name="username" bind:value={username} />
+	</div>
+	<div>
+		<input type="text" name="repeat" bind:value={username} />
+	</div>
+	<p>
+		username: <code>{username}</code>
+	</p>
+	<button on:click|preventDefault={() => (username = '')}>reset</button>
+</form>
 
 <style>
 	.content {

@@ -1,38 +1,19 @@
-# create-svelte
+# Example Projects I've used to learn Svelte
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+## Official Resources
 
-## Creating a project
+https://svelte.dev/docs
+https://svelte.dev/tutorial/basics
+https://learn.svelte.dev/
+https://svelte.dev/examples
+https://kit.svelte.dev/docs
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Tutorials
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+- https://levelup.video/tutorials/svelte-for-beginners/starting-code
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+# TODO
 
-## Developing
+## Modules
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+https://svelte.dev/docs#component-format-script-4-prefix-stores-with-$-to-access-their-values-store-contract
