@@ -10,7 +10,7 @@
 		return value;
 	}
 
-	let value: string = '';
+	let value = '';
 
 	const dispatch = createEventDispatcher<{ squareClicked: { index: number } }>();
 </script>

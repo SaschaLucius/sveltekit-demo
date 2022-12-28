@@ -2,8 +2,8 @@
 	const players: string[] = ['X', 'O'];
 
 	let squares: string[] = ['', '', '', '', '', '', '', '', ''];
-	let count: number = 0;
-	let isFinished: boolean = false;
+	let count = 0;
+	let isFinished = false;
 
 	function handleClick(index: number): void {
 		squares[index] = players[count % 2];

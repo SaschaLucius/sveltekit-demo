@@ -3,7 +3,7 @@
 	import '../page.css';
 
 	let grid: Grid;
-	let isFinished: boolean = false;
+	let isFinished = false;
 </script>
 
 <svelte:head>
