@@ -18,7 +18,7 @@
 		{ path: '/tic-tac-toe/4-value-binding', name: 'T3 value binding' },
 		{ path: '/tic-tac-toe/5-function-props', name: 'T3 function as prop' },
 		{ path: '/tic-tac-toe/6-context-api', name: 'T3 context api' },
-		{ path: '/tic-tac-toe/7-simple-store', name: 'T3 simple Store' },
+		// { path: '/tic-tac-toe/7-simple-store', name: 'T3 simple Store' },
 		{ path: '/tic-tac-toe/8-custom-store', name: 'T3 custom Store' },
 		{ path: '/tic-tac-toe/9-plain-with-button', name: 'T3 button' }
 	];
