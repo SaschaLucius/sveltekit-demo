@@ -1,11 +1,14 @@
 # Super simple version
 
-## Slot
+## Parent -> Child pass down
 
-https://svelte.dev/tutorial/slots
+### Slot
 
-## Event forwarding
+- https://svelte.dev/tutorial/slots
 
-https://svelte.dev/tutorial/dom-event-forwarding
+## Child -> Parent propagation
 
-- to get notified of clicks on our <CustomButton> — you need to forward click events on the <button> element with <button on:click>
+### Event forwarding
+
+- https://svelte.dev/tutorial/dom-event-forwarding
+  - to get notified of clicks on our <CustomButton> — you need to forward click events on the <button> element with <button on:click>

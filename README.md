@@ -27,10 +27,12 @@ https://codesandbox.io/s/svelte
 Stackblitz https://vite.new/svelte-ts
 
 ## pre-commit Hooks
+
 https://prettier.io/docs/en/precommit.html
+
 - https://github.com/typicode/husky
 - https://github.com/okonet/lint-staged
-https://duncanlew.medium.com/getting-started-with-husky-and-lint-staged-for-pre-commit-hooks-c2764d8c9ae
+  https://duncanlew.medium.com/getting-started-with-husky-and-lint-staged-for-pre-commit-hooks-c2764d8c9ae
 
 If you use nvm: https://stackoverflow.com/a/72279243
 

@@ -1,12 +1,15 @@
 # Super simple version
 
-## declaring props of a component -> one way binding
+## Parent -> Child pass down
 
-https://svelte.dev/tutorial/declaring-props
-https://svelte.dev/docs#component-format-script-1-export-creates-a-component-prop
+### declaring props of a component -> one way binding
 
-## Event forwarding
+- https://svelte.dev/tutorial/declaring-props
+- https://svelte.dev/docs#component-format-script-1-export-creates-a-component-prop
 
-https://svelte.dev/tutorial/dom-event-forwarding
+## Child -> Parent propagation
 
-- to get notified of clicks on our <CustomButton> — you need to forward click events on the <button> element with <button on:click>
+### Event forwarding
+
+- https://svelte.dev/tutorial/dom-event-forwarding
+  - to get notified of clicks on our <CustomButton> — you need to forward click events on the <button> element with <button on:click>
