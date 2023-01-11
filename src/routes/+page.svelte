@@ -16,13 +16,16 @@
 				<img src={welcome_fallback} alt="Welcome" />
 			</picture>
 		</span>
-
-		to your new<br />SvelteKit app
 	</h1>
 
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
+	<h1>Svelte REPLs</h1>
+	<iframe
+		title="Aphrodite example"
+		width="100%"
+		height="600px"
+		scrolling="no"
+		src="https://svelte.dev/repl/1018ca7b44fd46139bb9894c89eae246?version=3.49.0"
+	/>
 </section>
 
 <style>
