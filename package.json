@@ -39,7 +39,7 @@
 		"husky": "8.0.3",
 		"jsdom": "21.0.0",
 		"lint-staged": "13.1.0",
-		"pocketbase-typegen": "^1.1.2",
+		"pocketbase-typegen": "1.1.2",
 		"prettier": "2.8.2",
 		"prettier-plugin-svelte": "2.9.0",
 		"svelte": "3.55.0",
@@ -58,6 +58,6 @@
 		"*.{js,ts,svelte}": "eslint . --fix"
 	},
 	"dependencies": {
-		"pocketbase": "^0.10.0"
+		"pocketbase": "0.10.0"
 	}
 }
