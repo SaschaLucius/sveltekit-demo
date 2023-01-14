@@ -14,7 +14,8 @@
 		"format": "prettier --plugin-search-dir . --write .",
 		"coverage": "vitest run --coverage",
 		"prepare": "husky install",
-		"pre-commit": "npx lint-staged"
+		"pre-commit": "npx lint-staged",
+		"typegen": "pocketbase-typegen --json ./pocketbase/pb_schema.json --out ./src/routes/pocketbase/pocketbase-types.ts"
 	},
 	"devDependencies": {
 		"@fontsource/fira-mono": "4.5.10",
@@ -38,6 +39,7 @@
 		"husky": "8.0.3",
 		"jsdom": "21.0.0",
 		"lint-staged": "13.1.0",
+		"pocketbase-typegen": "^1.1.2",
 		"prettier": "2.8.2",
 		"prettier-plugin-svelte": "2.9.0",
 		"svelte": "3.55.0",
@@ -54,5 +56,8 @@
 			"prettier --check --plugin-search-dir=."
 		],
 		"*.{js,ts,svelte}": "eslint . --fix"
+	},
+	"dependencies": {
+		"pocketbase": "^0.10.0"
 	}
 }

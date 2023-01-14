@@ -11,6 +11,7 @@
 		{ path: '/item-list', name: 'Item list' },
 		{ path: '/forms', name: 'Forms' },
 		{ path: '/lifecycle', name: 'Lifecycle' },
+		{ path: '/pocketbase', name: 'Pocketchat' },
 		{ path: '/tic-tac-toe/0-plain', name: 'T3 plain' },
 		{ path: '/tic-tac-toe/1-event-forwarding-and-slot', name: 'T3 Slot' },
 		{ path: '/tic-tac-toe/2-event-forwarding-and-props', name: 'T3 1-way binding' },
