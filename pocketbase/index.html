@@ -5,7 +5,17 @@
 		<link rel="icon" href="../favicon.png" />
 		<meta name="viewport" content="width=device-width" />
 		<meta http-equiv="content-security-policy" content="">
-		<link href="../_app/immutable/assets/_layout-8454f68e.css" rel="stylesheet"><title>About</title><!-- HEAD_svelte-1ds1qyu_START --><meta name="description" content="About this app"><!-- HEAD_svelte-1ds1qyu_END -->
+		<link href="../_app/immutable/assets/_layout-8454f68e.css" rel="stylesheet">
+		<link rel="modulepreload" href="../_app/immutable/start-8fb65bf9.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index-f624063e.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/singletons-455fb973.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index-9d5997b4.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/parse-f0c618df.js">
+		<link rel="modulepreload" href="../_app/immutable/components/pages/_layout.svelte-7daf4f96.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/stores-70d9b93a.js">
+		<link rel="modulepreload" href="../_app/immutable/modules/pages/_layout.ts-5612100c.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/_layout-79cb23d1.js">
+		<link rel="modulepreload" href="../_app/immutable/components/pages/pocketbase/_page.svelte-93424844.js">
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">
@@ -36,28 +46,35 @@
 	<div class="corner svelte-1u9z1tp"><a href="https://github.com/SaschaLucius/sveltekit-demo" class="svelte-1u9z1tp"><img src="/_app/immutable/assets/github-1ea8d62e.svg" alt="GitHub" class="svelte-1u9z1tp"></a></div>
 </header>
 
-	<main class="svelte-8o1gnw">
+	<main class="svelte-8o1gnw"><h1>Chat</h1>
 
-<div class="text-column"><h1>About this app</h1>
+<form><input placeholder="Username" type="text">
 
-	<p>This is a <a href="https://kit.svelte.dev">SvelteKit</a> app. You can make your own by typing the
-		following into your command line and following the prompts:
-	</p>
+		<input placeholder="Password" type="password">
+		<button>Sign Up</button>
+		<button>Login</button></form>
 
-	<pre>npm create svelte@latest</pre>
-
-	<p>The page you&#39;re looking at is purely static HTML, with no client-side interactivity needed.
-		Because of that, we don&#39;t need to load any JavaScript. Try viewing the page&#39;s source, or opening
-		the devtools network panel and reloading.
-	</p>
-
-	<p>The <a href="/sverdle">Sverdle</a> page illustrates SvelteKit&#39;s data loading and form handling. Try
-		using it with JavaScript disabled!
-	</p></div></main>
+</main>
 
 	<footer class="svelte-8o1gnw"><p>visit <a href="https://kit.svelte.dev" class="svelte-8o1gnw">kit.svelte.dev</a> to learn SvelteKit</p></footer>
 </div>
 
-</div>
+
+		<script type="module" data-sveltekit-hydrate="1hktrw9">
+			import { start } from "../_app/immutable/start-8fb65bf9.js";
+
+			start({
+				env: {},
+				paths: {"base":"","assets":""},
+				target: document.querySelector('[data-sveltekit-hydrate="1hktrw9"]').parentNode,
+				version: "1673704208997",
+				hydrate: {
+					node_ids: [0, 9],
+					data: [null,null],
+					form: null
+				}
+			});
+		</script>
+	</div>
 	</body>
 </html>
