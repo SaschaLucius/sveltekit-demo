@@ -58,6 +58,6 @@
 		"*.{js,ts,svelte}": "eslint . --fix"
 	},
 	"dependencies": {
-		"pocketbase": "0.10.0"
+		"pocketbase": "0.10.1"
 	}
 }
