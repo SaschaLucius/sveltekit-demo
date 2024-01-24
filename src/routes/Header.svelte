@@ -5,10 +5,6 @@
 
 	// https://svelte.dev/tutorial/keyed-each-blocks
 	var pages = [
-		{ path: '/counter', name: 'Counter' },
-		{ path: '/about', name: 'About' },
-		{ path: '/sverdle', name: 'Sverdle' },
-		{ path: '/item-list', name: 'Item list' },
 		{ path: '/forms', name: 'Forms' },
 		{ path: '/lifecycle', name: 'Lifecycle' },
 		{ path: '/pocketbase', name: 'Pocketchat' },
@@ -20,8 +16,10 @@
 		{ path: '/tic-tac-toe/5-function-props', name: 'T3 function as prop' },
 		{ path: '/tic-tac-toe/6-context-api', name: 'T3 context api' },
 		{ path: '/tic-tac-toe/7-simple-store', name: 'T3 simple Store' },
-		// { path: '/tic-tac-toe/8-custom-store', name: 'T3 custom Store' },
-		{ path: '/tic-tac-toe/9-plain-with-button', name: 'T3 button' }
+		{ path: '/tic-tac-toe/8-custom-store', name: 'T3 custom Store' },
+		{ path: '/tic-tac-toe/9-plain-with-button', name: 'T3 button' },
+		{ path: '/tic-tac-toe/10-local-storage', name: 'T3 local storage' },
+		{ path: '/tic-tac-toe/11-crudcrud', name: 'T3 CrudCrud' }
 	];
 </script>
 
